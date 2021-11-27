@@ -3,13 +3,11 @@
     <p>We Hope that you will find the property you are looking forward to</p>
     <LinkTo @route="about" class="button">About Us</LinkTo>
 </Jumbo>
-
+<h1>{{model.title}}</h1>
 <div class="rentails">
     <ul class="results">
-        <li><Rental></Rental></li>
-        <li><Rental></Rental></li>
-        <li><Rental></Rental></li>
-        <li><Rental></Rental></li>
-        <li><Rental></Rental></li>
+        {{#each @model as |rental|}}
+            <li><Rental @rental={{rental}}></Rental></li>
+        {{/each}}
     </ul>
 </div>
